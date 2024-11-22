@@ -1,0 +1,14 @@
+tasks:
+  - init: |
+      mkdir -p /workspace/home-persistent
+      if [ ! -L /home ]; then
+          sudo rm -rf /home
+          sudo ln -s /workspace/home-persistent /home
+          sudo chown -R gitpod:gitpod /workspace/home-persistent
+      fi
+      sudo apt update
+      sudo apt install -y xfce4 xfce4-goodies dbus-x11 x11-xserver-utils
+      wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+      sudo dpkg -i chrome-remote-desktop_current_amd64.deb || sudo apt-get install -f -y
+      echo "exec /usr/bin/xfce4-session" > ~/.chrome-remote-desktop-session
+      echo 'exec sleep infinity' > ~/.bashrc
