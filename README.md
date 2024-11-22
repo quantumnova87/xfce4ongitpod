@@ -10,6 +10,6 @@ everything usual, i guess.
 
 audio works via pulseaudio (just use "pulseaudio" on the terminal and open pavucontrol)
 
-the disk is persistent, because the /home folder is actually on /workspace/../home-persistent, so you can use it "without limitations"
+the /home disk is persistent, because the /home folder is actually on /workspace/../home-persistent, so you can use it "without limitations"
 
 enjoy.
